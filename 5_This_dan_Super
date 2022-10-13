@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _5_This_dan_Super
+{
+    class Program
+    {
+        public class Person
+        {
+            public string name = "petanikode";
+            public int age = 22;
+        }
+        public class Employee : Person
+        {
+            string name = "Dian";
+            float Salary = 4000f;
+            int age = 23;
+
+            public void showInfoThis()
+            {
+                Console.WriteLine("Name: " + this.name);
+                Console.WriteLine("Age: " + this.age);
+                Console.WriteLine("Salary: $" + Salary);
+            }
+
+            public void showInfoBase()
+            {
+                Console.WriteLine("Name: " + base.name);
+                Console.WriteLine("Age: " + base.age);
+                Console.WriteLine("Salary: $" + Salary);
+            }
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Implementasi This");
+            //iplementasi this
+            Employee A = new Employee();
+            A.showInfoThis();
+
+            Console.WriteLine("\nImplementasi Base/Super");
+            //imlementasi super
+            Employee B = new Employee();
+            B.showInfoBase();
+        }
+    }
+}
